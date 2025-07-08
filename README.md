@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧮 小学数学练习应用
 
-## Getting Started
+一个专为小学生设计的交互式数学练习应用，提供循序渐进的出题、智能评分和针对性训练。
 
-First, run the development server:
+## ✨ 功能特性
 
+### 🎯 循序渐进的出题系统
+- **5个难度等级**：初级(10以内) → 基础(20以内) → 中级(100以内) → 高级(大数) → 专家(复杂)
+- **4种运算类型**：加法、减法、乘法、除法
+- **智能题目生成**：确保除法结果为整数、减法结果为正数
+
+### 📊 完善的评分系统
+- 实时正确率统计
+- 答题速度分析
+- 综合评分(0-100分)
+- 等级评定(A+、A、B+、B、C)
+
+### 💾 详细的记录功能
+- 本地存储用户进度
+- 历史会话记录
+- 各运算类型熟练度追踪
+- 连续学习天数统计
+
+### 🤖 智能评估与推荐
+- 个性化学习报告
+- 最近7天活动可视化
+- 薄弱环节分析
+- 智能难度和题型推荐
+
+### 🎮 针对性训练
+- 根据表现自动调整推荐难度
+- 重点练习薄弱运算类型
+- 错题回顾功能
+
+### 🎨 用户友好的界面
+- 适合小学生的色彩和设计
+- emoji图标增加趣味性
+- 响应式设计，支持各种设备
+- 动画效果和视觉反馈
+
+## 🚀 快速开始
+
+### 环境要求
+- Node.js 18.0 或以上版本
+- npm 或 yarn
+
+### 安装运行
+
+1. **克隆项目**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/xbfool/primary-math-practice.git
+cd primary-math-practice
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **安装依赖**
+```bash
+npm install
+# 或者
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **启动开发服务器**
+```bash
+npm run dev
+# 或者
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **访问应用**
+打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## 📱 使用说明
 
-To learn more about Next.js, take a look at the following resources:
+### 主要页面
+- **首页** (`/`) - 选择难度和运算类型
+- **练习页面** (`/practice`) - 进行数学练习
+- **结果页面** (`/results`) - 查看练习结果和分析
+- **学习报告** (`/report`) - 详细的学习统计和进度追踪
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 使用流程
+1. **选择设置** - 在首页选择难度等级和运算类型
+2. **开始练习** - 进入练习页面答题（每次10道题）
+3. **查看结果** - 练习完成后查看详细的评分和分析
+4. **学习报告** - 查看个人学习进度和改进建议
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🏗️ 技术栈
 
-## Deploy on Vercel
+- **前端框架**: Next.js 15
+- **编程语言**: TypeScript
+- **样式方案**: Tailwind CSS
+- **数据存储**: LocalStorage
+- **开发工具**: Turbopack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 项目结构
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                    # Next.js App Router页面
+│   ├── page.tsx           # 主页面
+│   ├── practice/          # 练习页面
+│   ├── results/           # 结果页面
+│   └── report/            # 学习报告页面
+├── types/                 # TypeScript类型定义
+│   └── index.ts          # 数据类型定义
+└── utils/                 # 工具函数
+    ├── questionGenerator.ts  # 题目生成器
+    └── storageManager.ts     # 存储管理器
+```
+
+## 🎯 核心功能详解
+
+### 题目生成系统
+- 根据难度等级生成相应范围的数字
+- 确保计算结果合理（除法整除、减法非负）
+- 支持混合运算类型练习
+
+### 智能推荐算法
+- 基于历史表现分析薄弱环节
+- 动态调整推荐难度
+- 个性化练习方案生成
+
+### 数据持久化
+- 使用LocalStorage保存用户数据
+- 支持数据导入导出
+- 自动备份学习记录
+
+## 🔮 未来计划
+
+- [ ] 添加音效和动画效果
+- [ ] 支持多用户账户
+- [ ] 添加成就系统
+- [ ] 开发移动端APP
+- [ ] 支持在线同步
+
+## 🤝 贡献指南
+
+欢迎提交Issue和Pull Request来改进这个项目！
+
+1. Fork 这个项目
+2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个Pull Request
+
+## 📄 许可证
+
+本项目采用 MIT 许可证 - 详情请查看 [LICENSE](LICENSE) 文件
+
+## 👨‍💻 作者
+
+**xbfool** - [GitHub](https://github.com/xbfool)
+
+---
+
+⭐ 如果这个项目对你有帮助，请给它一个星标！
