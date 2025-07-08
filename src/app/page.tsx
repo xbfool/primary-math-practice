@@ -228,11 +228,17 @@ export default function Home() {
             >
               📊 学习报告
             </button>
+            <button
+              onClick={() => router.push('/worksheet')}
+              className="px-6 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-lg hover:from-purple-200 hover:to-pink-200 transition-all flex items-center gap-2"
+            >
+              📄 生成试卷
+            </button>
           </div>
         </div>
 
         {/* 功能介绍 */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white rounded-lg p-6 text-center shadow-md">
             <div className="text-4xl mb-4">📊</div>
             <h4 className="font-bold text-gray-800 mb-2">智能评估</h4>
@@ -242,6 +248,11 @@ export default function Home() {
             <div className="text-4xl mb-4">🏆</div>
             <h4 className="font-bold text-gray-800 mb-2">进度追踪</h4>
             <p className="text-gray-600 text-sm">记录每次练习，见证你的成长</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="text-4xl mb-4">📄</div>
+            <h4 className="font-bold text-gray-800 mb-2">试卷生成</h4>
+            <p className="text-gray-600 text-sm">制作A4打印试卷，支持自定义难度布局</p>
           </div>
           <div className="bg-white rounded-lg p-6 text-center shadow-md">
             <div className="text-4xl mb-4">🎮</div>
